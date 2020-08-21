@@ -22,7 +22,7 @@ class b
   
   void mostrar ()
   {
-    
+    f.play();
     anc += 0.5;
     if(anc ==4)
     {

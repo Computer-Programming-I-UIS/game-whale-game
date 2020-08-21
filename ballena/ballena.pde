@@ -1,4 +1,6 @@
-
+import ddf.minim.*;
+Minim fondo;
+AudioPlayer f;
 PImage imga;
 PImage imgb;
 PImage imgc;
@@ -13,7 +15,8 @@ baterias [] bateria = new baterias [10];
 
 void setup ()
 {
-  
+  fondo = new Minim(this);
+  f = fondo.loadFile("best-friend.wav");
    for (int i=0; i<2; i++ )//datos de cada uno de mis objetos
   {
     botella [i] = new botellas (60+x);
@@ -29,13 +32,15 @@ void setup ()
 
 void draw ()
 {
+   background(#071493);
+   
   if(ent == 1)
   {
     ent +=1;
   }
   else
   {
-    background(0);
+   
     j1.move();
     for (int i=0; i<2; i++ )//funcion para llmar a mis metodos de dibujo y aumento de barras
     {
