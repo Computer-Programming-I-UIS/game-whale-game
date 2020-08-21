@@ -1,0 +1,7 @@
+class ballena 
+{
+  void move()
+  {
+    
+  }
+}
