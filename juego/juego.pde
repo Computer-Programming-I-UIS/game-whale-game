@@ -12,19 +12,19 @@ class ballena // clase paleta
   {
     if (keyPressed && keyCode == UP) // cuando oprimes arriba se mueve la paleta
     {
-    J1.pos.y =  constrain(J1.pos.y-velchoque*2, J1.alt, height-(height/5)); // delimitacion del movimiento con las flechas
+    J1.pos.y =  constrain(J1.pos.y-velchoque*2, 0, height-(height/5)); // delimitacion del movimiento con las flechas
     }
     if (keyPressed && keyCode == DOWN)  // cuando oprimes abajo se mueve la paleta
     {
-    J1.pos.y =  constrain(J1.pos.y+velchoque*2, J1.alt, height-(height/5)); // delimitacion del movimiento con las flechas
+    J1.pos.y =  constrain(J1.pos.y+velchoque*2, 0, height-(height/5)); // delimitacion del movimiento con las flechas
     }
     if (keyPressed && keyCode == LEFT) // cuando oprimes arriba se mueve la paleta
     {
-    J1.pos.x =  constrain(J1.pos.x-velchoque*2, J1.alt, width-140); // delimitacion del movimiento con las flechas
+    J1.pos.x =  constrain(J1.pos.x-velchoque*2, 0, width-140); // delimitacion del movimiento con las flechas
     }
     if (keyPressed && keyCode == RIGHT)  // cuando oprimes abajo se mueve la paleta
     {
-    J1.pos.x =  constrain(J1.pos.x+velchoque*2, J1.alt,  width-140); // delimitacion del movimiento con las flechas
+    J1.pos.x =  constrain(J1.pos.x+velchoque*2,0,  width-140); // delimitacion del movimiento con las flechas
     }
   }
   
@@ -49,6 +49,14 @@ class ballena // clase paleta
     copy(imga,int(blar)*120,int(balt)*120,120,120,int(pos.x),int(pos.y),140,140); 
     delay (30);
   }
+}
+
+void escenario()
+{
+  copy(imgb,0,height-20,49,57,1200,15,1200,20);
+  
+  
+
 }
 
 

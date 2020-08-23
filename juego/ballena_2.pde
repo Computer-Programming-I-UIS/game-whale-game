@@ -1,14 +1,10 @@
 poder pila;
-basura botella;
-basura bolsa;
-basura llanta;
-basura papel;
-basura vaso;
+basura botella,bolsa, llanta, papel, vaso;
 ballena J1;   
 import ddf.minim.*;
 Minim fondo;
 AudioPlayer f;
-PImage imga,imgb, imgc, imgd, imge, imgf, imgg;
+PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo;
 int ent = 1;
 int x = 1000, m = 0, d = 0;
 float blar=0, balt=0, velchoque = 5;// velocidad de movimiento inicial 
@@ -21,7 +17,6 @@ void settings()
 
 void setup()
 {
-  
   fondo = new Minim(this);
   f = fondo.loadFile("best-friend.wav");
   imga = loadImage("j1.png");
@@ -31,12 +26,14 @@ void setup()
   imge = loadImage("llanta.png");
   imgf = loadImage("papel.png");
   imgg = loadImage("vaso.png");
+  imgp = loadImage("4.png");
+  imgo = loadImage("onda.png");
   pila = new poder();// declarar elobjeto 
-  bolsa = new basura();// declarar elobjeto
-  llanta = new basura();// declarar elobjeto
-  papel = new basura();// declarar elobjeto
-  vaso = new basura();// declarar elobjeto
-  botella = new basura();
+  bolsa = new basura(1);// declarar elobjeto
+  llanta = new basura(1);// declarar elobjeto
+  papel = new basura(2);// declarar elobjeto
+  vaso = new basura(2);// declarar elobjeto
+  botella = new basura(2);
   J1 = new ballena (30);//declarar la 
   
 }
@@ -44,39 +41,55 @@ void setup()
   void draw(){
     
       background(#071493);
-      
-      
-      J1.movJ1(); // movimiento ballena 
-      
-      pila.mover(); // mover la ballena
-      
-      pila.choque(); // funcion de rebote apartir de la ballena 1
-      J1.mostrar(); // impresion paleta 1
-      
-        botella.mover();
-        bolsa.mover();
-        llanta.mover();
-        papel.mover();
-        vaso.mover();
-      
+        escenario();
+        botella.mover(2);
+        bolsa.mover(1);
+        llanta.mover(3);
+        papel.mover(2);
+        vaso.mover(2);
+        
+        escenario();
+        botella.mostrar(5);
+        bolsa.mostrar(1);
+        llanta.mostrar(2);
+        papel.mostrar(3);
+        vaso.mostrar(4);
+        
         botella.choque();
         bolsa.choque();
         llanta.choque();
         papel.choque();
         vaso.choque();
         
-        botella.mostrar(5);
-        bolsa.mostrar(1);
-        llanta.mostrar(2);
-        papel.mostrar(3);
-        vaso.mostrar(4);
+        pila.mover(); // mover la ballena
       
-      if (pila.out()) // en caso de salir la basura restablecer velocidad 
-      {
-        
-        pila = new poder(); // creacion de la nueva pelora 
-      }
-      pila.mostrar(); // mostrar pelota
-      
+        pila.choque(); // funcion de rebote apartir de la ballena 1
+        pila.mostrar(); // mostrar pelota
+        if(bolsa.out())
+        {
+          bolsa = new basura(1);
+        }
+        if(botella.out())
+        {
+          botella = new basura(2);
+        }
+        if(llanta.out())
+        {
+          llanta = new basura(1);
+        }
+        if(papel.out())
+        {
+          papel= new basura(2);
+        }
+        if(vaso.out())
+        {
+          vaso = new basura(2);
+        }
+        if(pila.out())
+        {
+          pila = new poder();
+        }
+            J1.movJ1(); // movimiento ballena 
+      J1.mostrar(); // impresion paleta 1
    }
   

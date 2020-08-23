@@ -4,9 +4,8 @@ class poder
   PVector vel; // velocidad inicial de la bola
   int lado = 15; // dimenciones d la pelota
    
-  poder() 
+  poder()
   {
-    
     pos = new PVector (width, random(50,height-(height/7))); // posicion inicial para el vector posicoon de la pelota
     vel = PVector.random2D();//velocidad definidio en dimenciones rando en los parametros 2d
     if (vel.x < 0.5 && vel.x >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
@@ -21,7 +20,6 @@ class poder
     
     vel.mult(velchoque);// velocidad del bloque apartir de choque
   }
-
   void mostrar () // mostrar pelotita 
   {
     copy(imgc,0,0,120,120,int(pos.x), int(pos.y),80,80); 
