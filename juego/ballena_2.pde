@@ -12,7 +12,7 @@ int contadora = 0, contadorb = 0;
 
 void settings()
 {
-  fullScreen();//pantalla completa
+   fullScreen();//pantalla completa
 }
 
 void setup()
@@ -41,14 +41,13 @@ void setup()
   void draw(){
     
       background(#071493);
-        escenario();
+        
         botella.mover(2);
         bolsa.mover(1);
         llanta.mover(3);
         papel.mover(2);
         vaso.mover(2);
         
-        escenario();
         botella.mostrar(5);
         bolsa.mostrar(1);
         llanta.mostrar(2);
@@ -90,6 +89,7 @@ void setup()
           pila = new poder();
         }
             J1.movJ1(); // movimiento ballena 
-      J1.mostrar(); // impresion paleta 1
+      J1.mostrar(); // impresion paleta 
+      
    }
   

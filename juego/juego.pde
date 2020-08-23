@@ -49,15 +49,6 @@ class ballena // clase paleta
     copy(imga,int(blar)*120,int(balt)*120,120,120,int(pos.x),int(pos.y),140,140); 
     delay (30);
   }
-}
 
-void escenario()
-{
-  copy(imgb,0,height-20,49,57,1200,15,1200,20);
-  
-  
 
 }
-
-
- 
