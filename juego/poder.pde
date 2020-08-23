@@ -1,13 +1,13 @@
-class basura 
+class poder
 {
   PVector pos; // vector de la psocion de la bola
   PVector vel; // velocidad inicial de la bola
   int lado = 15; // dimenciones d la pelota
    
-  basura() 
+  poder() 
   {
     
-    pos = new PVector (width, random(0,height-(height/7))); // posicion inicial para el vector posicoon de la pelota
+    pos = new PVector (width, random(50,height-(height/7))); // posicion inicial para el vector posicoon de la pelota
     vel = PVector.random2D();//velocidad definidio en dimenciones rando en los parametros 2d
     if (vel.x < 0.5 && vel.x >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
     {
@@ -20,6 +20,29 @@ class basura
     }
     
     vel.mult(velchoque);// velocidad del bloque apartir de choque
+  }
+
+  void mostrar () // mostrar pelotita 
+  {
+    copy(imgc,0,0,120,120,int(pos.x), int(pos.y),80,80); 
+  }
+  
+   boolean out() // salida de la pelota 
+     {
+      return (pos.x < -lado || pos.x >width+lado); // retorno de si la pelota esta dentro o no del reciadro
+      
+     }
+ 
+  void mover() // movimiento pelota 
+  {
+    pos.add(vel); // posicion aderir velocidad
+    
+    if (pos.y < 15 || pos.y> height-(height/7))// en caso de tocar extremos en y invertir velocidad para crear rebote
+    {
+    vel.y *= -1;
+    }
+    
+    
   }
   
   void choque()
@@ -49,53 +72,4 @@ class basura
       pos.x=width+12;
   }
   }
-  
-  void mostrar (int j) // mostrar pelotita 
-  {
-    switch(j)
-    {
-      case 1: 
-      {
-      copy(imgd,0,0,120,120,int(pos.x), int(pos.y),80,80); 
-      }
-      case 2: 
-      {
-      copy(imge,0,0,120,120,int(pos.x), int(pos.y),80,80); 
-      }
-      case 3: 
-      {
-      copy(imgf,0,0,120,120,int(pos.x), int(pos.y),80,80); 
-      }
-      case 4: 
-      {
-      copy(imgg,0,0,120,120,int(pos.x), int(pos.y),80,80); 
-      }
-      
-    }
-    
-    if(j==5)
-      {
-      copy(imgb,0,0,120,120,int(pos.x), int(pos.y),80,80); 
-      }
-    
-  }
-  
-   boolean out() // salida de la pelota 
-     {
-      return (pos.x < -lado || pos.x >width+lado); // retorno de si la pelota esta dentro o no del reciadro
-      
-     }
- 
-  void mover() // movimiento pelota 
-  {
-    pos.add(vel); // posicion aderir velocidad
-    
-    if (pos.y < 15 || pos.y> height-(height/7))// en caso de tocar extremos en y invertir velocidad para crear rebote
-    {
-    vel.y *= -1;
-    }
-    
-    
-  }
-  
 }
