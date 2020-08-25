@@ -67,7 +67,7 @@ class basura
       vel.setMag(velchoque);// definniciion para la velocidad luego del choque
       
       pos.x=width+12;
-      
+      p= 1;
       J1.numv -= 1;
   }
   }

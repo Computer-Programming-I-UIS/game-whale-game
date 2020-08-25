@@ -4,9 +4,9 @@ ballena J1;
 import ddf.minim.*;
 Minim fondo;
 AudioPlayer f;
-PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco;
+PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo;
 int ent = 1;
-int x = 1000, m = 0, d = 0;
+int x = 1000, m = 0, d = 0, p=2;
 float blar=0, balt=0, velchoque = 10;// velocidad de movimiento inicial 
 int contadora = 0, contadorb = 0;
 void setup()
@@ -24,6 +24,7 @@ void setup()
   imgp = loadImage("4.png");
   imgo = loadImage("onda.png");
   imgco = loadImage("corazon.png");
+  imggo = loadImage("go.png");
   pila = new poder();// declarar elobjeto 
   bolsa = new basura(1);
   onda = new basura(1);// declarar elobjeto
@@ -36,6 +37,9 @@ void setup()
 }
 
   void draw(){
+    
+    if(p==2)
+    {
     
       background(#071493);
         onda.mover(1);
@@ -88,5 +92,26 @@ void setup()
         }
         J1.movJ1(); // movimiento ballena 
         J1.mostrar(); // impresion paleta 
-      
+    }
+    
+    if(p==1)
+    {
+       
+      gameover();
+      if(keyPressed && keyCode == SHIFT)
+  {
+    p=2;
+    onda.pos.x=width+80;
+    botella.pos.x=width+80; 
+    bolsa.pos.x=width+80;
+    llanta.pos.x=width+80;
+    pila.pos.x=width+80;
+    vaso.pos.x=width+80;
+    velchoque=10;
+    J1.pos.y=100;
+    J1.pos.x=50;
+  }
+    }
+    
+    
    }
