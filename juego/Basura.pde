@@ -8,26 +8,31 @@ class basura
   {
     velchoque += 0.05;
     vel = PVector.random2D();
+    
     if(lan==1)
     {
-    pos = new PVector (width, random(0,height-lado/2)); // posicion inicial para el vector posicoon de la pelota
+      pos = new PVector (width, random(0,height-lado/2)); // posicion inicial para el vector posicoon de la pelota
     }
+    
     if(lan==3)
     {
-    pos = new PVector (width, random(0 ,height-lado/2)); // posicion inicial para el vector posicoon de la pelota
+      pos = new PVector (width, random(0 ,height-lado/2)); // posicion inicial para el vector posicoon de la pelota
     }
+    
     if(lan==2)
     {
-    pos = new PVector ( random(width/2,width-(18+lado)),-100); // posicion inicial para el vector posicoon de la pelota
-    if (vel.y < 1.5 && vel.y >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
-    {
-      vel.y=random(1.5,2);//velocidad en caso de que sea muy bajo
+      pos = new PVector ( random(width/2,width-(18+lado)),-100); // posicion inicial para el vector posicoon de la pelota
+    
+      if (vel.y < 1.5 && vel.y >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
+      {
+        vel.y=random(1.5,2);//velocidad en caso de que sea muy bajo
+      }
+      
+      if (vel.x >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
+      {
+        vel.x= vel.x*-1;//velocidad en caso de que sea muy bajo
+      }
     }
-    if (vel.x >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
-    {
-      vel.x= vel.x*-1;//velocidad en caso de que sea muy bajo
-    }
-  }
     
     //velocidad definidio en dimenciones rando en los parametros 2d
     if (vel.x < 0.5 && vel.x >0) // en caso de la velocidad respecto a x sea muy baja aumentar a 1
@@ -56,24 +61,21 @@ class basura
     
     float dist = PVector.dist(PMC, pos); // definicion para crear el choque 
     
-    if (dist <lado){
-      vel.y = vel.y*1.1;
-      pos.sub(vel);
-      vel.x *= -1;
- 
-      PVector nVel = PVector.sub(pos,pos);// deficnicon para la velocidad apartir del choque
-      nVel.setMag(-vel.mag());  // definicion de la velocidad para el choque
-      vel = PVector.lerp(nVel, vel, 0.5); // encargado de hacer rebotes con angulo
-      vel.setMag(velchoque);// definniciion para la velocidad luego del choque
-      
+    if (dist <lado)
+    {
+      vida -=1;
+      if (vida ==0)
+      {
+        p=1;
+      }
       pos.x=width+12;
-      p= 1;
       J1.numv -= 1;
-  }
+    }
   }
   
   void mostrar (int j) // mostrar pelotita 
   {
+        
         
       if (j==1) 
       {
@@ -84,42 +86,35 @@ class basura
       }
       if (j==2) 
       {
-      copy(imge,0,0,98,98,int(pos.x), int(pos.y),160,140); 
-      ab=150;
-      lb=140;
-      lado =150;
+        copy(imge,0,0,98,98,int(pos.x), int(pos.y),160,140); 
+        ab=150;
+        lb=140;
+        lado =150;
       }
       if (j==3) 
       {
-      copy(imgf,0,0,99,99,int(pos.x), int(pos.y),40,40); 
-      ab=35;
-      lb=40;
-      lado =40;
+        copy(imgf,0,0,99,99,int(pos.x), int(pos.y),40,40); 
+        ab=35;
+        lb=40;
+        lado =40;
       }
       if (j==5) 
       {
-      copy(imgg,0,0,74,74,int(pos.x), int(pos.y),50,50); 
-      ab=40;
-      lb=50;
-      lado=50;
+        copy(imgg,0,0,74,74,int(pos.x), int(pos.y),50,50); 
+        ab=40;
+        lb=50;
+        lado=50;
       }
     
     if(j==5)
       {
-      copy(imgb,0,0,49,57,int(pos.x), int(pos.y),80,100);
-      ab=80;
-      lb=100;
-      lado=100;
+        copy(imgb,0,0,49,57,int(pos.x), int(pos.y),80,100);
+        ab=80;
+        lb=100;
+        lado=100;
       }
       
-     if(j==6)
-      {
-      copy(imgo,0,0,620,450,int(pos.x), int(pos.y),80,100);
-      ab=80;
-      lb=100;
-      lado=100;
-      }
-    
+     
   }
   
    boolean out() // salida de la pelota 
@@ -156,11 +151,11 @@ class basura
       
       if (pos.y> height-(18+lado))// en caso de tocar extremos en y invertir velocidad para crear rebote
       {
-      vel.y *= -1;
+        vel.y *= -1;
       }
       if(pos.y < 15)
       {
-         vel.y =0;
+        vel.y =0;
       }
     }
   }

@@ -1,10 +1,10 @@
-class ballena // clase paleta
+class ballena 
 {
-  PVector pos; // vector encargado de la pocision 
+  PVector pos; 
   int alt=45,anc=140, numv;
   ballena(int P_columna,int vidas)
   { 
-    pos = new PVector (P_columna, height/2); // definicion de la posicion
+    pos = new PVector (P_columna, height/2); 
     numv = vidas;
   }
   
@@ -12,23 +12,27 @@ class ballena // clase paleta
   {
     if (keyCode== 'P' ||keyCode== 'p')
     {
-    p=4;
+      p=4;
     }
-    if (keyPressed && keyCode == UP) // cuando oprimes arriba se mueve la paleta
+    
+    if (keyPressed && keyCode == UP)
     {
-    J1.pos.y =  constrain(J1.pos.y-velchoque-10, 0, height-(height/5)); // delimitacion del movimiento con las flechas
+      J1.pos.y =  constrain(J1.pos.y-velchoque-10, 0, height-(height/5)); 
     }
-    if (keyPressed && keyCode == DOWN)  // cuando oprimes abajo se mueve la paleta
+    
+    if (keyPressed && keyCode == DOWN) 
     {
-    J1.pos.y =  constrain(J1.pos.y+velchoque+10, 0, height-(height/5)); // delimitacion del movimiento con las flechas
+      J1.pos.y =  constrain(J1.pos.y+velchoque+10, 0, height-(height/5)); 
     }
-    if (keyPressed && keyCode == LEFT) // cuando oprimes arriba se mueve la paleta
+    
+    if (keyPressed && keyCode == LEFT) 
     {
-    J1.pos.x =  constrain(J1.pos.x-velchoque-10, 0, width-140); // delimitacion del movimiento con las flechas
+      J1.pos.x =  constrain(J1.pos.x-velchoque-10, 0, width-140); 
     }
-    if (keyPressed && keyCode == RIGHT)  // cuando oprimes abajo se mueve la paleta
+    
+    if (keyPressed && keyCode == RIGHT)  
     {
-    J1.pos.x =  constrain(J1.pos.x+10+velchoque,0,  width-140); // delimitacion del movimiento con las flechas
+      J1.pos.x =  constrain(J1.pos.x+10+velchoque,0,  width-140); 
     }
   }
   
@@ -36,6 +40,13 @@ class ballena // clase paleta
 
   void mostrar ()
   {
+    if (vida>=0)
+    {
+      for (int i=1; i<= vida; i++)
+      {
+      copy(imgco,6,10,32,32,10,i*50,70,70);
+      }
+    }
   //f.play();
     blar += 1;
     if(blar ==4)

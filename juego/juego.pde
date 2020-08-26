@@ -4,16 +4,18 @@ ballena J1;
 import ddf.minim.*;
 Minim fondo;
 AudioPlayer f;
-PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo, imgs,imginc,botinc,botpau, botaj;
+PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo, imgs,imginc,botones,botpau,insp, botcon;
 int ent = 1;
 int x = 1000, m = 0, d = 0, p=3;
-float blar=0, balt=0, velchoque = 10, u =0;// velocidad de movimiento inicial 
-int contadora = 0, contadorb = 0;
+float blar=0, balt=0, velchoque = 10, u =10; 
+int contadora = 0, contadorb = 0, vida=3;
 void setup()
 {
   fullScreen();//pantalla completa
   fondo = new Minim(this);
   f = fondo.loadFile("best-friend.wav");
+  insp = loadImage("C.png");
+  botcon = loadImage("control.png");
   imga = loadImage("j1.png");
   imgb = loadImage("obs.png");
   imgc = loadImage("eng.png");
@@ -22,14 +24,12 @@ void setup()
   imgf = loadImage("papel.png");
   imgg = loadImage("vaso.png");
   imgp = loadImage("4.png");
-  imgo = loadImage("onda.png");
   imgco = loadImage("corazon.png");
   imggo = loadImage("go.png");
   imgs = loadImage("suelo.png");
-  imginc = loadImage("inicio.jpeg");
-  botinc = loadImage("play.png");
+  imginc = loadImage("inicio.png");
+  botones = loadImage("botones.png");
   botpau = loadImage("pausa.png");
-  botaj = loadImage("ajustes.png");
   pila = new poder();// declarar elobjeto 
   bolsa = new basura(1);
   onda = new basura(1);// declarar elobjeto
@@ -41,96 +41,40 @@ void setup()
   
 }
 
-  void draw(){
+  void draw()
+  {
+    if(p==2)
+    {
+      game();
+    }
     
     if (p==3)
     {
-       inicio();
-      if(mousePressed && mouseX <=(width/4)+80 && mouseX >=(width/4) && mouseY <=(height*3/4)+20 && mouseY >=(height*3/4) )
-  {
-    p=2;
-   
-  }
-    }
-    
-    if(p==2)
-    {
-    
-      background(#071493);
-      copy(imgs,0,80,150,112,0,height*5/7,width,height);
-        onda.mover(1);
-        botella.mover(2);
-        bolsa.mover(1);
-        llanta.mover(3);
-        papel.mover(2);
-        vaso.mover(2);
-        
-        onda.mostrar(6);
-        botella.mostrar(5);
-        bolsa.mostrar(1);
-        llanta.mostrar(2);
-        papel.mostrar(3);
-        vaso.mostrar(4);
-        
-        botella.choque();
-        bolsa.choque();
-        llanta.choque();
-        papel.choque();
-        vaso.choque();
-        
-        pila.mover(); // mover la ballena
-      
-        pila.choque(); // funcion de rebote apartir de la ballena 1
-        pila.mostrar(); // mostrar pelota
-        if(bolsa.out())
-        {
-          bolsa = new basura(1);
-        }
-        if(botella.out())
-        {
-          botella = new basura(2);
-        }
-        if(llanta.out())
-        {
-          llanta = new basura(1);
-        }
-        if(papel.out())
-        {
-          papel= new basura(2);
-        }
-        if(vaso.out())
-        {
-          vaso = new basura(2);
-        }
-        if(pila.out())
-        {
-          pila = new poder();
-        }
-        J1.movJ1(); // movimiento ballena 
-        J1.mostrar(); // impresion paleta 
-        u = velchoque;
+      inicio();
     }
     
     if(p==1)
     {
-      gameover();
-      if(mousePressed && mouseX <=(width/4)+80 && mouseX >=(width/4) && mouseY <=(height*3/4)+20 && mouseY >=(height*3/4) )
-      {
-          p=2;
-      }
+       gameover();
     }
-    
-    
-    
+      
     if(p==4)
     {
-      background(0); 
-      velchoque=0;
-    pausa();  
-    
-      copy(botpau,0,0,32,32,width/2-50,height/2-300,100,100);
-     
+      pausa();
     }
     
+    if(p==5)
+    {
+      creditos();
+    }
     
-   }
+    if(p==6)
+    {
+      salida();
+    }
+    
+    if(p==7)
+    {
+      controles();
+    }
+  }

@@ -1,8 +1,8 @@
 class poder
 {
-  PVector pos; // vector de la psocion de la bola
-  PVector vel; // velocidad inicial de la bola
-  int lado = 15; // dimenciones d la pelota
+  PVector pos; 
+  PVector vel; 
+  int lado = 15; 
    
   poder()
   {
@@ -56,18 +56,10 @@ class poder
     
     float dist = PVector.dist(PMC, pila.pos); // definicion para crear el choque 
     
-    if (dist <lado){
+    if (dist <lado)
+    {
       velchoque += 0.5;
-      
-      pos.sub(vel);
-      vel.x *= -1;
-      
-      PVector nVel = PVector.sub(pos,pos);// deficnicon para la velocidad apartir del choque
-      nVel.setMag(-vel.mag());  // definicion de la velocidad para el choque
-      vel = PVector.lerp(nVel, vel, 0.5); // encargado de hacer rebotes con angulo
-      vel.setMag(velchoque);// definniciion para la velocidad luego del choque
-      
       pos.x=width+12;
-  }
+    }
   }
 }
