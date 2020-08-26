@@ -20,18 +20,22 @@ Imágenes descriptivas del juego
 
 
 1. Al iniciar el juego aparecerá el siguiente menú
+
 ![./1.png](./1.png)
 
 
 2. Este es el escenario, donde se desarrolla el juego
+
 ![./2.png](./2.png)
 
 
 3. Al pausar el juego se mostrará lo siguiente
+
 ![./3.png](./3.png)
 
 
 4. Al perder se mostrará lo siguiente, además por medio de los botones tendrás posibilidad de seguir jugando, descarsar según lo prefieras.
+
 ![./4.png](./4.png)
 
 
@@ -45,17 +49,21 @@ Se trata de un juego de plataforma ideal para niños mayores de 9 años en adela
 Para controlar a Sammy utiliza las flechas.
 
 Presiona flecha arriba para dirigirte hacia arriba
+
 ![./ar.png](./ar.png)
 
 
 Presiona flecha abajo para dirigirte hacia abajo
+
 ![./ab.png](./ab.png)
 
 Presiona flecha derecha para dirigirte hacia la derecha.
+
 ![./der.png](./der.png)
 
 
 Presiona flecha izquierda para dirigirte hacia la izquierda.
+
 ![./izq.png](./izq.png)
 
 
@@ -68,10 +76,12 @@ Si has pausado el jeugo, presiona C para continuar jugando
 
 
 Toca las pilas, y así obtendrás un aumento de velocidad.
+
 ![./pila.png](./pila.png)
 
 
 Evita chocar con la basura, pues cada choque disminuirá la vida de la ballena.
+
 ![./bas.png](./bas.png)
 
 
@@ -80,6 +90,7 @@ Evita chocar con la basura, pues cada choque disminuirá la vida de la ballena.
 
 
 El contenido de este juego está dirigido para todo público.
+
 ![./sello.png](./sello.png)
 
 
