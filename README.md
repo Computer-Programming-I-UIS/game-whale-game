@@ -68,10 +68,12 @@ Presiona flecha izquierda para dirigirte hacia la izquierda.
 
 
 Presiona P para poner el juego en pausa.
+
 ![./p.png](./p.png)
 
 
 Si has pausado el jeugo, presiona C para continuar jugando
+
 ![./c.png](./c.png)
 
 
