@@ -28,7 +28,7 @@ Imágenes descriptivas del juego
 
 
 3. Al pausar el juego se mostrará lo siguiente
-![./2.png](./3.png)
+![./3.png](./3.png)
 
 
 4. Al perder se mostrará lo siguiente, además por medio de los botones tendrás posibilidad de seguir jugando, descarsar según lo prefieras.
