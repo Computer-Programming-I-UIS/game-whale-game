@@ -51,7 +51,7 @@ class basura
     else  PMC.x = pos.x; //poscion del punto de rebote
     
     if (J1.pos.y > pos.y-lb) PMC.y= J1.pos.y + J1.alt;// definicion de las pociones si se encientram delante
-    else if ( J1.pos.y+(2*J1.alt) < pos.y) PMC.y = J1.pos.y;// definicion de las pociones si se encientram atras
+    else if ( J1.pos.y+(J1.alt) < pos.y) PMC.y = J1.pos.y;// definicion de las pociones si se encientram atras
     else  PMC.y = pos.y;//poscion del punto de rebote
     
     float dist = PVector.dist(PMC, pos); // definicion para crear el choque 
@@ -74,32 +74,32 @@ class basura
   
   void mostrar (int j) // mostrar pelotita 
   {
-    
+        
       if (j==1) 
       {
         copy(imgd,0,0,120,120,int(pos.x), int(pos.y),100,100); 
-        ab=100;
-        lb=110;
+        ab=80;
+        lb=80;
         lado = 100;
       }
       if (j==2) 
       {
       copy(imge,0,0,98,98,int(pos.x), int(pos.y),160,140); 
-      ab=160;
+      ab=150;
       lb=140;
       lado =150;
       }
       if (j==3) 
       {
       copy(imgf,0,0,99,99,int(pos.x), int(pos.y),40,40); 
-      ab=40;
-      lb=55;
+      ab=35;
+      lb=40;
       lado =40;
       }
       if (j==5) 
       {
       copy(imgg,0,0,74,74,int(pos.x), int(pos.y),50,50); 
-      ab=50;
+      ab=40;
       lb=50;
       lado=50;
       }

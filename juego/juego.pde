@@ -4,10 +4,10 @@ ballena J1;
 import ddf.minim.*;
 Minim fondo;
 AudioPlayer f;
-PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo;
+PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo, imgs,imginc,botinc,botpau, botaj;
 int ent = 1;
-int x = 1000, m = 0, d = 0, p=2;
-float blar=0, balt=0, velchoque = 10;// velocidad de movimiento inicial 
+int x = 1000, m = 0, d = 0, p=3;
+float blar=0, balt=0, velchoque = 10, u =0;// velocidad de movimiento inicial 
 int contadora = 0, contadorb = 0;
 void setup()
 {
@@ -25,6 +25,11 @@ void setup()
   imgo = loadImage("onda.png");
   imgco = loadImage("corazon.png");
   imggo = loadImage("go.png");
+  imgs = loadImage("suelo.png");
+  imginc = loadImage("inicio.jpeg");
+  botinc = loadImage("play.png");
+  botpau = loadImage("pausa.png");
+  botaj = loadImage("ajustes.png");
   pila = new poder();// declarar elobjeto 
   bolsa = new basura(1);
   onda = new basura(1);// declarar elobjeto
@@ -38,10 +43,21 @@ void setup()
 
   void draw(){
     
+    if (p==3)
+    {
+       inicio();
+      if(mousePressed && mouseX <=(width/4)+80 && mouseX >=(width/4) && mouseY <=(height*3/4)+20 && mouseY >=(height*3/4) )
+  {
+    p=2;
+   
+  }
+    }
+    
     if(p==2)
     {
     
       background(#071493);
+      copy(imgs,0,80,150,112,0,height*5/7,width,height);
         onda.mover(1);
         botella.mover(2);
         bolsa.mover(1);
@@ -92,25 +108,28 @@ void setup()
         }
         J1.movJ1(); // movimiento ballena 
         J1.mostrar(); // impresion paleta 
+        u = velchoque;
     }
     
     if(p==1)
     {
-       
       gameover();
-      if(keyPressed && keyCode == SHIFT)
-  {
-    p=2;
-    onda.pos.x=width+80;
-    botella.pos.x=width+80; 
-    bolsa.pos.x=width+80;
-    llanta.pos.x=width+80;
-    pila.pos.x=width+80;
-    vaso.pos.x=width+80;
-    velchoque=10;
-    J1.pos.y=100;
-    J1.pos.x=50;
-  }
+      if(mousePressed && mouseX <=(width/4)+80 && mouseX >=(width/4) && mouseY <=(height*3/4)+20 && mouseY >=(height*3/4) )
+      {
+          p=2;
+      }
+    }
+    
+    
+    
+    if(p==4)
+    {
+      background(0); 
+      velchoque=0;
+    pausa();  
+    
+      copy(botpau,0,0,32,32,width/2-50,height/2-300,100,100);
+     
     }
     
     
