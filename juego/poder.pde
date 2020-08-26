@@ -58,8 +58,16 @@ class poder
     
     if (dist <lado)
     {
+      pl.rewind();
+      pl.play();
+      latas +=1;
+      
       velchoque += 0.5;
       pos.x=width+12;
+      if (latas ==15)
+      {
+        p=9;
+      }
     }
   }
 }

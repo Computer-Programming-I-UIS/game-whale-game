@@ -15,6 +15,11 @@ class ballena
       p=4;
     }
     
+    if (keyCode== 'c' ||keyCode== 'C')
+    {
+      p=2;
+    }
+    
     if (keyPressed && keyCode == UP)
     {
       J1.pos.y =  constrain(J1.pos.y-velchoque-10, 0, height-(height/5)); 
@@ -46,9 +51,7 @@ class ballena
       {
       copy(imgco,6,10,32,32,10,i*50,70,70);
       }
-    }
-  //f.play();
-    blar += 1;
+    }    blar += 1;
     if(blar ==4)
     {
       blar -= 4;

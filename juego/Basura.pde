@@ -1,5 +1,6 @@
 class basura 
 {
+  
   PVector pos; // vector de la psocion de la bola
   PVector vel; // velocidad inicial de la bola
   int lado = 15; // dimenciones d la pelota
@@ -63,6 +64,9 @@ class basura
     
     if (dist <lado)
     {
+      
+      g.play();
+     
       vida -=1;
       if (vida ==0)
       {
