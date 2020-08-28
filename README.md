@@ -44,6 +44,9 @@ Imágenes descriptivas del juego
 
 Se trata de un juego de plataforma ideal para niños mayores de 9 años en adelante, que sepan leer, quienes quedarán encantados con la historia de Sammy, además el juego tiene un mensaje acerca de la contaminación, pues es la basura del mar es la que genera la dificultad al momento de conducir a Sammy.
 
+Por favor antes de ejecutar el programa añada las librería: 
+- Minim
+
 ### **INSTRUCCIONES, CONTROLES Y ACCIONES:**
 
 Para controlar a Sammy utiliza las flechas.
