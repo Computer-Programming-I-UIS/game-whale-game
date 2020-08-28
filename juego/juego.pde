@@ -18,11 +18,11 @@ void setup()
   fondo = new Minim(this);
   f = fondo.loadFile("best-friend.wav");
   historia = new Minim(this);
-  his = historia.loadFile("historia.mid");
+  his = historia.loadFile("historia.wav");
   ff = new Minim(this);
-  fff = ff.loadFile("ff.mid");
+  fff = ff.loadFile("ff.wav");
   menu =new Minim(this);
-  men = menu.loadFile("menu.mid");
+  men = menu.loadFile("menu.wav");
   cho = new Minim(this);
   g = cho.loadFile("gba.wav");
   plus = new Minim(this);
@@ -66,7 +66,7 @@ void setup()
     {
       men.pause();
       historia();
-      his.rewind();
+     
       his.play();
     }
     
@@ -74,7 +74,7 @@ void setup()
     {
       fff.pause();
       men.play();
-      men.rewind();
+      
       inicio();
     }
     
@@ -96,7 +96,7 @@ void setup()
       men.pause();
       f.pause();
       fff.play();
-      fff.rewind();
+      
       creditos();
     }
     
@@ -116,7 +116,7 @@ void setup()
     {
       pas=0;
       game();
-      f.rewind();
+      
       f.play();
       his.pause();
     }

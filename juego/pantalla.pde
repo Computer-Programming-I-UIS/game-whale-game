@@ -197,6 +197,13 @@ void game()
     background(#2D8EFA);
       copy(imggo,0,627,1050,784,0,height*4/5,width,height);
         
+        botella.choque();
+        bolsa.choque();
+        llanta.choque();
+        papel.choque();
+        vaso.choque();
+        pila.choque(); 
+        
         botella.mover(2);
         bolsa.mover(1);
         llanta.mover(3);
@@ -210,15 +217,10 @@ void game()
         papel.mostrar(3);
         vaso.mostrar(4);
         
-        botella.choque();
-        bolsa.choque();
-        llanta.choque();
-        papel.choque();
-        vaso.choque();
-        
+         
         pila.mover(); 
       
-        pila.choque(); 
+       
         pila.mostrar(); 
         if(bolsa.out())
         {
