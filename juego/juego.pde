@@ -9,11 +9,13 @@ PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo, imgs,imgi
 int ent = 1;
 int x = 1000, m = 0, d = 0, p=3, pas =0;
 float blar=0, balt=0, velchoque = 10, u =10; 
-int contadora = 0, contadorb = 0, vida=3, latas=0;;
+int contadora = 0, contadorb = 0, vida=5, latas=0, sub =0;
 PFont font1;
+PFont font2;
 void setup()
 {
   font1 = loadFont("Rockwell-CondensedBold-48.vlw");
+  font2= loadFont("Arial-BoldMT-48.vlw");
   fullScreen();//pantalla completa
   fondo = new Minim(this);
   f = fondo.loadFile("best-friend.wav");
@@ -96,7 +98,7 @@ void setup()
       men.pause();
       f.pause();
       fff.play();
-      
+      sub=height;
       creditos();
     }
     

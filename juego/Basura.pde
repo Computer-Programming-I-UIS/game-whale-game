@@ -90,15 +90,15 @@ class basura
       }
       if (j==2) 
       {
-        copy(imge,0,0,98,98,int(pos.x), int(pos.y),160,140); 
+        copy(imge,0,0,64,64,int(pos.x), int(pos.y),160,140); 
         ab=150;
         lb=140;
-        lado =150;
+        lado =120;
       }
       if (j==3) 
       {
-        copy(imgf,0,0,99,99,int(pos.x), int(pos.y),40,40); 
-        ab=35;
+        copy(imgf,0,0,80,80,int(pos.x), int(pos.y),40,40); 
+        ab=40;
         lb=40;
         lado =40;
       }

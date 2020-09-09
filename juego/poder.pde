@@ -61,10 +61,10 @@ class poder
       pl.rewind();
       pl.play();
       latas +=1;
-      
+      sub +=1;
       velchoque += 0.5;
       pos.x=width+12;
-      if (latas ==15)
+      if (sub >= 10)
       {
         p=9;
       }
