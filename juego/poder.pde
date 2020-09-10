@@ -65,6 +65,8 @@ class poder
       pos.x=width+12;
       if (sub >= 10)
       {
+        men.rewind();
+        men.pause();
         p=9;
       }
     }

@@ -13,7 +13,7 @@ AudioSample g,pl;
 boolean pasar = true;
 PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo, imgs,imginc,botones,botpau,insp,insj,sig, botcon,his1,his2,his3,his4, creditos;
 int ent = 1;
-int x = 1000, m = 0, d = 0, p=3, pas =0;
+int x = 1000, m = 0, d = 0, p=9, pas =0;
 float blar=0, balt=0, velchoque = 10, u =10; 
 int contadora = 0, contadorb = 0, vida=5, latas=0, sub =0;
 PFont font1;
