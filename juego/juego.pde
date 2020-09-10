@@ -1,9 +1,15 @@
+import ddf.minim.*;
+import ddf.minim.spi.*;
+import ddf.minim.signals.*;
+import ddf.minim.analysis.*;
+import ddf.minim.ugens.*;
+import ddf.minim.effects.*;
 poder pila;
 basura botella,bolsa, llanta, papel, vaso, onda;
 ballena J1;   
-import ddf.minim.*;
-Minim fondo, cho, plus,menu,historia,ff;
-AudioPlayer f,g,pl, men,his,fff;
+Minim fondo, cho, plus,menu,historia,ff,end;
+AudioPlayer f, men,his,fff,en;
+AudioSample g,pl;
 boolean pasar = true;
 PImage imga,imgb, imgc, imgd, imge, imgf, imgg,imgp,imgo,imgco, imggo, imgs,imginc,botones,botpau,insp,insj,sig, botcon,his1,his2,his3,his4, creditos;
 int ent = 1;
@@ -18,17 +24,19 @@ void setup()
   font2= loadFont("Arial-BoldMT-48.vlw");
   fullScreen();//pantalla completa
   fondo = new Minim(this);
-  f = fondo.loadFile("best-friend.wav");
+  f = fondo.loadFile("menu.mp3");
+  end = new Minim(this);
+  en = end.loadFile("creditos.mp3");
   historia = new Minim(this);
-  his = historia.loadFile("historia.wav");
+  his = historia.loadFile("historia.mp3");
   ff = new Minim(this);
-  fff = ff.loadFile("ff.wav");
+  fff = ff.loadFile("fin.mp3");
   menu =new Minim(this);
-  men = menu.loadFile("menu.wav");
+  men = menu.loadFile("fondo.mp3");
   cho = new Minim(this);
-  g = cho.loadFile("gba.wav");
+  g = cho.loadSample("trash.mp3", 1000);
   plus = new Minim(this);
-  pl = plus.loadFile("pila.wav");
+  pl = plus.loadSample("pila.mp3");
   creditos = loadImage("creditos.png");
   his1 = loadImage("his1.png");
   his2 = loadImage("his2.png");
@@ -66,64 +74,62 @@ void setup()
   {
     if(p==2)
     {
-      men.pause();
+     his.play();
       historia();
      
-      his.play();
+     
     }
     
     if (p==3)
     {
-      fff.pause();
-      men.play();
-      
+     f.play();
+     
       inicio();
     }
     
     if(p==1)
     {
-       f.pause();
+      fff.play();
        gameover();
     }
       
     if(p==4)
     {
-      men.pause();
-      f.pause();
+      
       pausa();
     }
     
     if(p==5)
     {
-      men.pause();
-      f.pause();
-      fff.play();
+     
       sub=height;
       creditos();
     }
     
     if(p==6)
     {
-      men.pause();
+     
       salida();
     }
     
     if(p==7)
     {
-      men.pause();
+      
       controles();
     }
     
      if(p==8)
     {
       pas=0;
+      men.play();
+      his.pause();
       game();
       
-      f.play();
-      his.pause();
+      
     }
     if(p==9)
     {
+      en.play();
       fin();
     }
     

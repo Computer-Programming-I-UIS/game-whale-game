@@ -65,11 +65,13 @@ class basura
     if (dist <lado)
     {
       
-      g.play();
+      g.trigger();
      
       vida -=1;
       if (vida ==0)
       {
+        men.rewind();
+        men.pause();
         p=1;
       }
       pos.x=width+12;

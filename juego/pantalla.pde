@@ -105,6 +105,8 @@ void historia()
   
   if(pas==4)
   {
+    his.rewind();
+    his.pause();
     p=8;
   }
 }
@@ -127,6 +129,8 @@ void gameover()
     J1.pos.x=50;
     if(mousePressed && mouseX <=(width/2-44)+90 && mouseX >=(width/2-44) && mouseY <=(height*2/3+34)+32 && mouseY >=(height*2/3+34))
       {
+          fff.rewind();
+          fff.pause();
           velchoque=10;
           sub=0;
           vida=3;
@@ -135,6 +139,8 @@ void gameover()
     
     if(mousePressed && mouseX <=(width/2-26)+52 && mouseX >=(width/2-44) && mouseY <=(height*2/3+73)+38 && mouseY >=(height*2/3+73))
       {
+          fff.rewind();
+          fff.pause();
           vida=3;
           p=3;
           sub=0;
@@ -166,6 +172,8 @@ void inicio()
    
     if(mousePressed && mouseX <=(width/2+47) && mouseX >=(width/2-43) && mouseY <=(height*2/3+30) && mouseY >=(height*2/3) )
       {
+        f.rewind();
+        f.pause();
         vida=3;
         p=2;
         botella.pos.x=width+80; 
@@ -330,11 +338,15 @@ void fin()
     copy(sig,0,0,64, 64,width/2-35,height*2/3+73+100-30,75,78);
     if(mousePressed && mouseX <=(width/2-26)+57 && mouseX >=(width/2-44+5) && mouseY <=(height*2/3+73)+38+100+40-30 && mouseY >=(height*2/3+73+140-30))
     {
+      en.rewind();
+      en.pause();
       p=5;
     }
     
     if(mousePressed && mouseX <=(width/2-326)+52 && mouseX >=(width/2-344) && mouseY <=(height*2/3+73)+38+100 && mouseY >=(height*2/3+73+100))
-      {
+      {   
+          en.rewind();
+          en.pause();
           vida=3;
           p=3;
           sub=0;

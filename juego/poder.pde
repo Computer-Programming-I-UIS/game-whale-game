@@ -58,8 +58,7 @@ class poder
     
     if (dist <lado)
     {
-      pl.rewind();
-      pl.play();
+      pl.trigger();
       latas +=1;
       sub +=1;
       velchoque += 0.5;
