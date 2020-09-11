@@ -284,11 +284,13 @@ void game()
         J1.mostrar();  
         u = velchoque;
 }
-
+int y=700;
 void creditos()
 {
     background(0);  
-    copy(creditos,0,0,937,455,0,0,width,height);
+    copy(creditos,0,0,937,455,width/4, y, 937, 455);
+    y--;
+    if(y+455 ==0) y=700;
     copy(botones,110,0,35, 50,width/2-425-150, height*2/3+12+100,60,165);
     copy(botones,0,65,50, 100,width/2+307+150, height*2/3+100+70,180,220);
     
