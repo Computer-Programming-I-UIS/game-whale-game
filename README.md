@@ -1,5 +1,7 @@
 # SIEMPRE A TU LADO
 
+![./banner.PNG](./banner.PNG)
+
 ### **AUTORES:**
 
 
@@ -98,7 +100,9 @@ El contenido de este juego está dirigido para todo público.
 
 ![./sello.png](./sello.png)
 
+### **TRAILER - GAMEPLAY:**
 
+Enlace: https://youtu.be/mSJmKWa_3gg
 
 ### **CRÉDITOS:**
 
@@ -142,4 +146,3 @@ En la creación de este codigo se usaron como guia las siguientes pagínas:
 - https://processing.org/reference/fullScreen_.html
 - https://processing.org/reference/fullScreen_.html
 - https://processing.org/reference/exit_.html
-
